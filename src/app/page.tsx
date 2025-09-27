@@ -24,7 +24,11 @@ export default function Home() {
         <p className="text-slate-50 text-lg">Authentication Service</p>
         <div>
           <LoginButton>
-            <Button variant="secondary" size="lg" className="text-xl">
+            <Button
+              variant="secondary"
+              size="lg"
+              className="text-xl cursor-pointer"
+            >
               Login
             </Button>
           </LoginButton>
