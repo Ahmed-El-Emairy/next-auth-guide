@@ -20,6 +20,10 @@ import {
 
 import { CardWrapper } from "@/components/auth/card-wrapper";
 
+import { FormError } from "@/components/form-error";
+import { FormSuccess } from "@/components/form-succes";
+import { login } from "../../../actions/login";
+
 export const LoginForm = () => {
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -29,7 +33,9 @@ export const LoginForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof LoginSchema>) => {};
+  const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+    login(values);
+  };
 
   return (
     <CardWrapper
@@ -72,6 +78,8 @@ export const LoginForm = () => {
               )}
             />
           </div>
+          <FormError message="" />
+          <FormSuccess message="" />
           <Button type="submit" className="w-full">
             Login
           </Button>
