@@ -5,7 +5,7 @@ export const LoginSchema = z.object({
     error: "Email is Required",
   }), //Add Custom Error Handling
   password: z.string().min(1, {
-    error: "Password is Resquired",
+    error: "Password is Required",
   }),
 });
 
